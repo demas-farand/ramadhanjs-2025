@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Type the Song! (Artic Monkey Edition)</h1>
+        <div class="menu">
+            <a href="#" id="highscores-btn">View Highscores</a>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <select id="time-select">
+            <option value="30">30 Seconds</option>
+            <option value="60">60 Seconds</option>
+            <option value="120">120 Seconds</option>
+        </select>
+    </div>
+
+    <div class="game-info">
+        Time: <span id="timer">30</span>s |
+        Score: <span id="score">0</span> |
+        Accuracy: <span id="accuracy">100</span>%
+    </div>
+
+    <div id="word-container"></div>
+    <input type="text" id="input-field" autocomplete="off" autofocus>
+    <div id="result"></div>
+
+    <div id="highscores-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Highscores</h2>
+            <div id="highscores-list"></div>
+        </div>
+    </div>
+
+    <script src="typing.js"></script>
+</body>
+
+</html>
