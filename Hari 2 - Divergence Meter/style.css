@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+.circuit-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.divergence-meter {
+    position: relative;
+    z-index: 1;
+    color: #FF4500;
+    text-shadow: 0 0 10px #FF4500;
+    font-size: 5em;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #FF4500;
+    user-select: none;
+    cursor: pointer;
+}
+
+.digit-container {
+    display: inline-block;
+    position: relative;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+.digit {
+    position: relative;
+    overflow: hidden;
+    height: 1em;
+    width: 0.6em;
+    line-height: 1em;
+}
+
+.digits {
+    position: absolute;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(0);
+}
+
+.tube-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 69, 0, 0.3) 0%,
+        rgba(255, 69, 0, 0.1) 30%,
+        rgba(255, 69, 0, 0.1) 70%,
+        rgba(255, 69, 0, 0.3) 100%
+    );
+    pointer-events: none;
+}
+
+.world-line {
+    font-size: 0.3em;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.digits::before {
+    content: "0\n1\n2\n3\n4\n5\n6\n7\n8\n9";
+    white-space: pre;
+    position: absolute;
+    opacity: 0.1;
+    animation: randomize 2s infinite linear;
+}
+
+@keyframes randomize {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-9em);
+    }
+}
+#bgMusic {
+    display: none;
+}
